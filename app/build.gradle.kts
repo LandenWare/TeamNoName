@@ -3,11 +3,11 @@ plugins {
 }
 
 android {
-    namespace = "com.example.teamnoname"
+    namespace = "com.noname.calender"
     compileSdk = 35
 
     defaultConfig {
-        applicationId = "com.example.teamnoname"
+        applicationId = "com.noname.calender"
         minSdk = 24
         targetSdk = 35
         versionCode = 1
