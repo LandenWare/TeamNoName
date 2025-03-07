@@ -790,21 +790,20 @@
 
     <TextView
         android:id="@+id/MonthDisplay"
-        android:layout_width="228dp"
-        android:layout_height="45dp"
+        android:layout_width="227dp"
+        android:layout_height="43dp"
         android:layout_marginTop="44dp"
         android:shadowRadius="0"
         android:text="January 2025"
         android:textAlignment="center"
         android:textScaleX="1"
-        android:textSize="34sp"
+        android:textSize="28sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@+id/day4"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintVertical_bias="0.023" />
 
     <ImageButton
         android:id="@+id/switchMonth2"
