@@ -5,21 +5,142 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    tools:context=".Calender">
+
+    <TextView
+        android:id="@+id/weekDay5"
+        android:layout_width="56dp"
+        android:layout_height="24dp"
+        android:shadowRadius="0"
+        android:text="Fri."
+        android:textAlignment="center"
+        android:textScaleX="1"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/day4"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.828"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.972" />
+
+    <TextView
+        android:id="@+id/weekDay6"
+        android:layout_width="56dp"
+        android:layout_height="24dp"
+        android:shadowRadius="0"
+        android:text="Sat."
+        android:textAlignment="center"
+        android:textScaleX="1"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/day4"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.994"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.972" />
+
+    <TextView
+        android:id="@+id/weekDay3"
+        android:layout_width="56dp"
+        android:layout_height="24dp"
+        android:shadowRadius="0"
+        android:text="Wed."
+        android:textAlignment="center"
+        android:textScaleX="1"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/day4"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.501"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.972" />
+
+    <TextView
+        android:id="@+id/weekDay4"
+        android:layout_width="56dp"
+        android:layout_height="24dp"
+        android:shadowRadius="0"
+        android:text="Thu."
+        android:textAlignment="center"
+        android:textScaleX="1"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/day4"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.664"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.972" />
+
+    <TextView
+        android:id="@+id/weekDay"
+        android:layout_width="56dp"
+        android:layout_height="24dp"
+        android:shadowRadius="0"
+        android:text="Mon."
+        android:textAlignment="center"
+        android:textScaleX="1"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/day4"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.171"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.972" />
+
+    <TextView
+        android:id="@+id/weekDay2"
+        android:layout_width="56dp"
+        android:layout_height="24dp"
+        android:shadowRadius="0"
+        android:text="Tues."
+        android:textAlignment="center"
+        android:textScaleX="1"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/day4"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.335"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.972" />
+
+    <TextView
+        android:id="@+id/weekDay1"
+        android:layout_width="56dp"
+        android:layout_height="24dp"
+        android:shadowRadius="0"
+        android:text="Sun."
+        android:textAlignment="center"
+        android:textScaleX="1"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/day4"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.005"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.972" />
 
     <ImageButton
-        android:id="@+id/leftMonth"
+        android:id="@+id/switchMonth1"
         android:layout_width="45dp"
         android:layout_height="45dp"
         android:layout_marginStart="37dp"
-        android:layout_marginTop="53dp"
+        android:layout_marginTop="44dp"
         android:layout_marginEnd="10dp"
         android:background="#00FFFFFF"
         android:scaleX="2"
         android:scaleY="2"
-        app:layout_constraintEnd_toStartOf="@+id/textView3"
+        app:layout_constraintEnd_toStartOf="@+id/MonthDisplay"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
+        android:contentDescription="Go Left"
         app:srcCompat="?attr/actionModeCloseDrawable" />
 
     <Button
@@ -55,7 +176,7 @@
         app:layout_constraintTop_toBottomOf="@+id/day30" />
 
     <Button
-        android:id="@+id/day67"
+        android:id="@+id/day42"
         style="@style/Widget.MaterialComponents.Button"
         android:layout_width="56dp"
         android:layout_height="56dp"
@@ -82,7 +203,7 @@
         android:textSize="14sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/day67"
+        app:layout_constraintEnd_toStartOf="@+id/day42"
         app:layout_constraintStart_toEndOf="@+id/day40"
         app:layout_constraintTop_toBottomOf="@+id/day34" />
 
@@ -174,7 +295,7 @@
         android:textColor="#000000"
         android:textSize="14sp"
         android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/day67"
+        app:layout_constraintBottom_toTopOf="@+id/day42"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/day34"
         app:layout_constraintTop_toBottomOf="@+id/day28" />
@@ -559,7 +680,7 @@
         style="@style/Widget.MaterialComponents.Button"
         android:layout_width="56dp"
         android:layout_height="56dp"
-        android:layout_marginTop="140dp"
+        android:layout_marginTop="160dp"
         android:backgroundTint="#D7D7D7"
         android:text="31"
         android:textColor="#000000"
@@ -575,7 +696,7 @@
         style="@style/Widget.MaterialComponents.Button"
         android:layout_width="56dp"
         android:layout_height="56dp"
-        android:layout_marginTop="140dp"
+        android:layout_marginTop="160dp"
         android:backgroundTint="#D7D7D7"
         android:text="31"
         android:textColor="#000000"
@@ -591,7 +712,7 @@
         style="@style/Widget.MaterialComponents.Button"
         android:layout_width="56dp"
         android:layout_height="56dp"
-        android:layout_marginTop="140dp"
+        android:layout_marginTop="160dp"
         android:backgroundTint="#D7D7D7"
         android:text="31"
         android:textColor="#000000"
@@ -607,7 +728,7 @@
         style="@style/Widget.MaterialComponents.Button"
         android:layout_width="56dp"
         android:layout_height="56dp"
-        android:layout_marginTop="140dp"
+        android:layout_marginTop="160dp"
         android:backgroundTint="#D7D7D7"
         android:text="31"
         android:textColor="#000000"
@@ -623,7 +744,7 @@
         style="@style/Widget.MaterialComponents.Button"
         android:layout_width="56dp"
         android:layout_height="56dp"
-        android:layout_marginTop="140dp"
+        android:layout_marginTop="160dp"
         android:backgroundTint="#D7D7D7"
         android:text="31"
         android:textColor="#000000"
@@ -640,7 +761,7 @@
         style="@style/Widget.MaterialComponents.Button"
         android:layout_width="56dp"
         android:layout_height="56dp"
-        android:layout_marginTop="140dp"
+        android:layout_marginTop="160dp"
         android:backgroundTint="#D7D7D7"
         android:text="31"
         android:textColor="#000000"
@@ -656,7 +777,7 @@
         style="@style/Widget.MaterialComponents.Button"
         android:layout_width="56dp"
         android:layout_height="56dp"
-        android:layout_marginTop="140dp"
+        android:layout_marginTop="160dp"
         android:backgroundTint="#D7D7D7"
         android:text="31"
         android:textColor="#000000"
@@ -668,9 +789,10 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/textView3"
+        android:id="@+id/MonthDisplay"
         android:layout_width="228dp"
         android:layout_height="45dp"
+        android:layout_marginTop="44dp"
         android:shadowRadius="0"
         android:text="January 2025"
         android:textAlignment="center"
@@ -679,15 +801,17 @@
         android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@+id/day4"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0" />
 
     <ImageButton
-        android:id="@+id/rightMonth"
+        android:id="@+id/switchMonth2"
         android:layout_width="45dp"
         android:layout_height="45dp"
         android:layout_marginStart="10dp"
-        android:layout_marginTop="53dp"
+        android:layout_marginTop="44dp"
         android:layout_marginEnd="36dp"
         android:background="#00FFFFFF"
         android:rotationX="0"
@@ -695,8 +819,10 @@
         android:scaleX="2"
         android:scaleY="2"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/textView3"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toEndOf="@+id/MonthDisplay"
         app:layout_constraintTop_toTopOf="parent"
+        android:contentDescription="Go Right"
         app:srcCompat="?attr/actionModeCloseDrawable" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
