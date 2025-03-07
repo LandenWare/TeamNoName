@@ -18,29 +18,27 @@ public class Calender extends AppCompatActivity {
     int SelectedMonthID = 1;
     int Year = 2025;
 
-    TextView MonthDisplay = findViewById(R.id.MonthDisplay);
-
-    public void switchMonth(boolean isLeft)
+    public void switchMonth(boolean isLeft, TextView monthDisplay)
     {
         if (isLeft)
         {
             SelectedMonthID--;
             if (SelectedMonthID < 1)
             {
-                SelectedMonthID = 12;
+                SelectedMonthID = 11;
                 Year--;
             }
         }
         else
         {
             SelectedMonthID++;
-            if (SelectedMonthID > 12)
+            if (SelectedMonthID > 11)
             {
-                SelectedMonthID = 1;
+                SelectedMonthID = 0;
                 Year++;
             }
         }
-        MonthDisplay.setText(Months[SelectedMonthID] + " " + Year);
+        monthDisplay.setText(Months[SelectedMonthID] + " " + Year);
     }
 
     @Override
@@ -54,20 +52,21 @@ public class Calender extends AppCompatActivity {
             return insets;
         });
 
+        TextView MonthDisplay = findViewById(R.id.MonthDisplay);
         ImageButton leftMonth = findViewById(R.id.switchMonth1);
         ImageButton rightMonth = findViewById(R.id.switchMonth2);
 
         leftMonth.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                switchMonth(true);
+                switchMonth(true, MonthDisplay);
             }
         });
 
         rightMonth.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                switchMonth(false);
+                switchMonth(false, MonthDisplay);
             }
         });
     }
