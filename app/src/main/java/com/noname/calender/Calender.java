@@ -1,6 +1,8 @@
 package com.noname.calender;
 
+import android.annotation.SuppressLint;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.ImageButton;
 import android.widget.TextView;
@@ -10,8 +12,10 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
+import java.util.*;
 
 public class Calender extends AppCompatActivity {
+    Calendar CalenderClass = Calendar.getInstance();
 
     String[] Months = {"January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"};
 
@@ -39,6 +43,20 @@ public class Calender extends AppCompatActivity {
             }
         }
         monthDisplay.setText(Months[SelectedMonthID] + " " + Year);
+    }
+
+    public void updateDays()
+    {
+        for (int w = 0; w < 6; w++)
+        {
+            for (int d = 1; d <= 7; d++)
+            {
+                int DayID = d + (w*7);
+                int resID = getResources().getIdentifier("day" + DayID, "id", getPackageName());
+                TextView DayButton = findViewById(resID);
+                DayButton.setText(Integer.toString(DayID));
+            }
+        }
     }
 
     @Override
@@ -69,5 +87,9 @@ public class Calender extends AppCompatActivity {
                 switchMonth(false, MonthDisplay);
             }
         });
+
+        updateDays();
+
+
     }
 }
