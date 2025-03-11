@@ -538,7 +538,8 @@
         app:layout_constraintBottom_toTopOf="@+id/day25"
         app:layout_constraintEnd_toStartOf="@+id/day19"
         app:layout_constraintStart_toEndOf="@+id/day17"
-        app:layout_constraintTop_toBottomOf="@+id/day11" />
+        app:layout_constraintTop_toBottomOf="@+id/day11"
+        app:strokeColor="#FFC400" />
 
     <Button
         android:id="@+id/day16"

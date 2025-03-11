@@ -12,50 +12,54 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
+
+import java.time.Month;
 import java.util.*;
 
 public class Calender extends AppCompatActivity {
-    Calendar CalenderClass = Calendar.getInstance();
+    Calendar CalendarClass = Calendar.getInstance();
 
     String[] Months = {"January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"};
 
-    int SelectedMonthID = 1;
-    int Year = 2025;
+    int SelectedMonthID = CalendarClass.get(Calendar.MONTH);
+    int Year = CalendarClass.get(Calendar.YEAR);
 
     public void switchMonth(boolean isLeft, TextView monthDisplay)
     {
         if (isLeft)
         {
-            SelectedMonthID--;
-            if (SelectedMonthID < 1)
-            {
-                SelectedMonthID = 11;
-                Year--;
-            }
+            CalendarClass.add(Calendar.MONTH, -1);
         }
         else
         {
-            SelectedMonthID++;
-            if (SelectedMonthID > 11)
-            {
-                SelectedMonthID = 0;
-                Year++;
-            }
+            CalendarClass.add(Calendar.MONTH, 1);
         }
-        monthDisplay.setText(Months[SelectedMonthID] + " " + Year);
+        monthDisplay.setText(Months[CalendarClass.get(Calendar.MONTH)] + " " + CalendarClass.get(Calendar.YEAR));
+        updateDays();
     }
 
     public void updateDays()
     {
-        for (int w = 0; w < 6; w++)
+        Calendar TempCalendarClass = Calendar.getInstance();
+        TempCalendarClass.set(Calendar.MONTH, CalendarClass.get(Calendar.MONTH));
+        TempCalendarClass.set(Calendar.DATE, 1);
+        int Offset = -(TempCalendarClass.get(Calendar.DAY_OF_WEEK))+1;
+        for (int w = 1; w <= 42; w++)
         {
-            for (int d = 1; d <= 7; d++)
+            int resID = getResources().getIdentifier("day" + w, "id", getPackageName());
+            TextView DayButton = findViewById(resID);
+            int Value = w+Offset;
+            if (Value <= 0)
             {
-                int DayID = d + (w*7);
-                int resID = getResources().getIdentifier("day" + DayID, "id", getPackageName());
-                TextView DayButton = findViewById(resID);
-                DayButton.setText(Integer.toString(DayID));
+                TempCalendarClass.add(Calendar.MONTH, -1);
+                Value = TempCalendarClass.getActualMaximum(Calendar.DATE) + Value;
+                TempCalendarClass.add(Calendar.MONTH, 1);
             }
+            else if (Value > CalendarClass.getActualMaximum(Calendar.DATE))
+            {
+                Value = Value - CalendarClass.getActualMaximum(Calendar.DATE);
+            }
+            DayButton.setText(Integer.toString(Value));
         }
     }
 
@@ -73,6 +77,8 @@ public class Calender extends AppCompatActivity {
         TextView MonthDisplay = findViewById(R.id.MonthDisplay);
         ImageButton leftMonth = findViewById(R.id.switchMonth1);
         ImageButton rightMonth = findViewById(R.id.switchMonth2);
+
+        MonthDisplay.setText(Months[CalendarClass.get(Calendar.MONTH)] + " " + CalendarClass.get(Calendar.YEAR));
 
         leftMonth.setOnClickListener(new View.OnClickListener() {
             @Override
