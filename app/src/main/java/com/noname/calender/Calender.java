@@ -1,6 +1,7 @@
 package com.noname.calender;
 
 import android.annotation.SuppressLint;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -49,15 +50,26 @@ public class Calender extends AppCompatActivity {
             int resID = getResources().getIdentifier("day" + w, "id", getPackageName());
             TextView DayButton = findViewById(resID);
             int Value = w+Offset;
+            DayButton.setBackgroundColor(Color.parseColor("#b9b9b9"));
+            DayButton.setTextColor(Color.parseColor("#242424"));
             if (Value <= 0)
             {
                 TempCalendarClass.add(Calendar.MONTH, -1);
                 Value = TempCalendarClass.getActualMaximum(Calendar.DATE) + Value;
                 TempCalendarClass.add(Calendar.MONTH, 1);
+                DayButton.setBackgroundColor(Color.parseColor("#959595"));
+                DayButton.setTextColor(Color.parseColor("#323232"));
             }
             else if (Value > CalendarClass.getActualMaximum(Calendar.DATE))
             {
                 Value = Value - CalendarClass.getActualMaximum(Calendar.DATE);
+                DayButton.setBackgroundColor(Color.parseColor("#959595"));
+                DayButton.setTextColor(Color.parseColor("#323232"));
+            }
+            if (SelectedMonthID == CalendarClass.get(Calendar.MONTH) && Year == CalendarClass.get(Calendar.YEAR) && Value == CalendarClass.get(Calendar.DATE))
+            {
+                DayButton.setBackgroundColor(Color.parseColor("#e3e3e3"));
+                DayButton.setTextColor(Color.parseColor("#000000"));
             }
             DayButton.setText(Integer.toString(Value));
         }
