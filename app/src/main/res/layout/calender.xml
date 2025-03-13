@@ -5,6 +5,7 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#FFFFFF"
     tools:context=".Calender">
 
     <TextView
@@ -134,13 +135,13 @@
         android:layout_marginTop="44dp"
         android:layout_marginEnd="10dp"
         android:background="#00FFFFFF"
+        android:contentDescription="Go Left"
         android:scaleX="2"
         android:scaleY="2"
         app:layout_constraintEnd_toStartOf="@+id/MonthDisplay"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        android:contentDescription="Go Left"
         app:srcCompat="?attr/actionModeCloseDrawable" />
 
     <Button
@@ -411,6 +412,7 @@
         android:layout_width="56dp"
         android:layout_height="56dp"
         android:backgroundTint="#D7D7D7"
+
         android:text="31"
         android:textColor="#000000"
         android:textSize="14sp"
@@ -538,7 +540,8 @@
         app:layout_constraintBottom_toTopOf="@+id/day25"
         app:layout_constraintEnd_toStartOf="@+id/day19"
         app:layout_constraintStart_toEndOf="@+id/day17"
-        app:layout_constraintTop_toBottomOf="@+id/day11" />
+        app:layout_constraintTop_toBottomOf="@+id/day11"
+        app:strokeColor="#FFC400" />
 
     <Button
         android:id="@+id/day16"
@@ -813,6 +816,7 @@
         android:layout_marginTop="44dp"
         android:layout_marginEnd="36dp"
         android:background="#00FFFFFF"
+        android:contentDescription="Go Right"
         android:rotationX="0"
         android:rotationY="180"
         android:scaleX="2"
@@ -821,7 +825,6 @@
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toEndOf="@+id/MonthDisplay"
         app:layout_constraintTop_toTopOf="parent"
-        android:contentDescription="Go Right"
         app:srcCompat="?attr/actionModeCloseDrawable" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
